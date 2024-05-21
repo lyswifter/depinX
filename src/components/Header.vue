@@ -1,9 +1,52 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { defineEmits, reactive } from 'vue';
 
-const activeIndex = ref('1')
-const handleSelect = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
+let state = reactive({
+    defaultIdx: 0,
+    selectedIdx: 0,
+    menuItems: [{
+        index: 0,
+        title: "About",
+        action: "AboutAnchor",
+    }, {
+        index: 1,
+        title: "Industry Background",
+        action: "IndustryAnchor",
+    }, {
+        index: 2,
+        title: "Content",
+        action: "ContentAnchor",
+    }, {
+        index: 3,
+        title: "Aethir Checker Node",
+        action: "CheckerNodeAnchor",
+    }, {
+        index: 4,
+        title: "Portfolio",
+        action: "PortfolioAnchor",
+    }, {
+        index: 5,
+        title: "Contact",
+        action: "ContactAnchor",
+    }]
+})
+
+const emit = defineEmits({
+    reloadAction(){
+    },
+    scrollIntoView(target: string){
+        console.log("emit target:" + target)
+    },
+})
+
+function clickAction(target: string, idx: number) {
+    state.selectedIdx = idx
+    emit('scrollIntoView', target)
+}
+
+function reloadAction() {
+    state.selectedIdx = 0
+    emit('reloadAction')
 }
 </script>
 
@@ -11,18 +54,17 @@ const handleSelect = (key: string, keyPath: string[]) => {
     <div>
         <el-header class="header">
             <div>
-                <img style="width: 154px" src="../assets/logo_nav@2x.png" alt="depinX" />
+                <a href="javascript:void(0)" @click="reloadAction">
+                    <img style="width: 154px" src="../assets/logo_nav@2x.png" alt="depinX" />
+                </a>
             </div>
 
             <div class="flex-grow" />
 
             <div style="display: flex;">
-                <div class="wcolor f16 menu-item">About</div>
-                <div class="wcolor f16 menu-item">Industry Background</div>
-                <div class="wcolor f16 menu-item">Content</div>
-                <div class="wcolor f16 menu-item">Aethir Checker Node</div>
-                <div class="wcolor f16 menu-item">Portfolio</div>
-                <div class="wcolor f16 menu-item">Contact</div>
+                <div v-for="(item, i) in state.menuItems" :key="i" class="wcolor f16 menu-item" 
+                :class="state.selectedIdx == i ? 'menu-item-selected' : 'menu-item-unselected'" @click="clickAction(item.action, i)">
+                    {{ item.title }}</div>
             </div>
         </el-header>
     </div>
@@ -43,6 +85,19 @@ const handleSelect = (key: string, keyPath: string[]) => {
 .menu-item {
     margin-left: 30px;
     margin-right: 30px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+  border-bottom: 1px solid white;
+}
+
+.menu-item-selected {
+    border-bottom: 1px solid white;
+}
+
+.menu-item-unselected {
+    border-bottom: none;
 }
 
 .flex-grow {

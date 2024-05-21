@@ -5,8 +5,8 @@
     <div class="footer-view">
         <div style="display: flex;padding-top: 50px;">
             <div class="logo-view"><img src="../assets//logo_nav@2x.png" width="188" height="40" alt=""></div>
-        <div class="flex-grow" />
-        <div class="rights-view">© depin x 2024. All rights reserved</div>
+            <div class="flex-grow" />
+            <div class="rights-view">© depin x 2024. All rights reserved</div>
         </div>
     </div>
 </template>
