@@ -1,4 +1,13 @@
 <script setup lang="ts">
+import { defineEmits } from "vue";
+
+const emit = defineEmits({
+    scrollToNextView(target: string){}
+})
+
+function scrollToNextView(target: string) {
+    emit('scrollToNextView', target)
+}
 </script>
 
 <template>
@@ -21,7 +30,7 @@
                 </div>
 
                 <br>
-                <div>
+                <div style="cursor: pointer;" @click="scrollToNextView('VisionAnchor')">
                     <img src="../assets/arrow_down_nor@2x.png" width="40" height="80" alt="">
                 </div>
             </div>
@@ -29,7 +38,7 @@
 
         <!-- vision container view -->
 
-        <div class="vision-container">
+        <div class="vision-container" id="VisionAnchor">
             <div class="mid-view">
                 <div class="line_1">
 

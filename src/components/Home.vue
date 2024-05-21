@@ -25,6 +25,12 @@ function toTopAction() {
         behavior: "smooth",
     });
 }
+
+function scrollToNextView(target: string) {
+    document.getElementById(target)?.scrollIntoView({
+        behavior: "smooth",
+    });
+}
 </script>
 
 <template>
@@ -42,7 +48,7 @@ function toTopAction() {
             <el-main class="main-view">
 
                 <!-- video container view -->
-                <VideoView id="AboutAnchor"></VideoView>
+                <VideoView id="AboutAnchor" @scrollToNextView="scrollToNextView"></VideoView>
 
                 <!-- industry background container view -->
                 <IndustryView id="IndustryAnchor"></IndustryView>
