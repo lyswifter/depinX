@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, reactive } from 'vue';
+import { reactive } from 'vue';
 import one from '../assets/content_capital_liquidity@2x.png';
+import four from "../assets/content_consultancy@2x.png";
 import two from "../assets/content_hardware@2x.png";
-import three from "../assets/content_services@2x.png"
-import four from "../assets/content_consultancy@2x.png"
+import three from "../assets/content_services@2x.png";
 
 let state = reactive({
     services: [{
@@ -40,6 +40,20 @@ function enterAction(index: Number) {
 function outAction(index: Number) {
     console.log(index)
 }
+
+function rightClick() {
+    document.getElementsByClassName('service-list')[0].scrollBy({
+        left: 100,
+        behavior: 'smooth',
+    })
+}
+
+function leftClick() {
+    document.getElementsByClassName('service-list')[0].scrollBy({
+        left: -100,
+        behavior: 'smooth',
+    })
+}
 </script>
 
 <template>
@@ -63,11 +77,11 @@ function outAction(index: Number) {
                 </div>
 
                 <div style="display: flex;margin-top: 60px;margin-left: 40px;">
-                    <div style="">
+                    <div style="cursor: pointer;" @click="leftClick">
                         <img src="../assets/arrow_left_nor@2x.png" width="80" height="40" alt="">
                     </div>
 
-                    <div style="margin-left: 20px;">
+                    <div style="margin-left: 20px;cursor: pointer;" @click="rightClick">
                         <img src="../assets//arrow_right_nor@2x.png" width="80" height="40" alt="">
                     </div>
                 </div>
