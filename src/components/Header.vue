@@ -31,7 +31,7 @@ const handleSelect = (key: string, keyPath: string[]) => {
 <style scoped>
 .header {
     width: 100%;
-    padding-top: 10px;
+    padding-top: 15px;
     background: rgba(6, 15, 50);
     display: flex;
 }

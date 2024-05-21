@@ -93,7 +93,7 @@ function leftClick() {
 <style scoped>
 .service-view {
     width: 100%;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     background: #040C27;
 }
 
@@ -111,7 +111,7 @@ function leftClick() {
     text-align: left;
     font-style: normal;
     text-transform: none;
-    background-image: linear-gradient(179.9999385867923deg, #1B4DFF 0%, #01FFFF 100%);
+    background-image: linear-gradient(179deg, #1B4DFF 0%, #01FFFF 100%);
     color: transparent;
     background-clip: text;
 }

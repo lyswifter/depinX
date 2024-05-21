@@ -19,7 +19,10 @@ declare module 'vue' {
     Header: typeof import('./src/components/Header.vue')['default']
     Home: typeof import('./src/components/Home.vue')['default']
     Industry: typeof import('./src/components/Industry.vue')['default']
+    Portfolio: typeof import('./src/components/Portfolio.vue')['default']
     Service: typeof import('./src/components/Service.vue')['default']
+    Touch: typeof import('./src/components/Touch.vue')['default']
     Video: typeof import('./src/components/Video.vue')['default']
+    Why: typeof import('./src/components/Why.vue')['default']
   }
 }

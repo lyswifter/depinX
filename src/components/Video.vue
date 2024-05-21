@@ -104,7 +104,7 @@
 .vision-container {
     width: 100%;
     padding-bottom: 200px;
-    background: rgba(9, 20, 58, 0.5);
+    background: rgba(9, 20, 58);
 }
 
 .mid-view {

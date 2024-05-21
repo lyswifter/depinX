@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <div>
+    <div style="background: rgba(9, 20, 58);">
         <div class="industry-view">
             <div class="mid-view-2">
                 <div class="id-title-view">Industry Background</div>
