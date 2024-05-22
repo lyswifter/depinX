@@ -89,7 +89,8 @@ let state = reactive({
 
                             <div class="qr-code-v">
                                 <div class="qr-code">
-                                    <img src="../assets/code_wechat_checker_node@2x.png" width="100%" height="100%" alt="">
+                                    <img src="../assets/code_wechat_checker_node@2x.png" width="100%" height="100%"
+                                        alt="">
                                 </div>
                                 <div class="qr-code" style="margin-left: 40px;">
                                     <img src="../assets/code_tg_checker_node@2x.png" width="100%" height="100%" alt="">
@@ -141,6 +142,12 @@ let state = reactive({
         font-size: 14px;
         line-height: 20px;
     }
+
+    .row-view {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -174,6 +181,12 @@ let state = reactive({
         font-size: 18px;
         line-height: 25px;
     }
+
+    .row-view {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 }
 
 .text-1 {
@@ -191,12 +204,6 @@ let state = reactive({
 .feature-view {
     width: 100%;
     margin: 0 auto;
-}
-
-.row-view {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .item-card {

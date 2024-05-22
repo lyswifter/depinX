@@ -170,7 +170,7 @@ function scrollToNextView(target: string) {
     .ball-dot-view img {
         position: absolute;
         right: 0;
-        top: 80%;
+        top: 35%;
         bottom: 50%;
         width: 550px;
         height: 1100px;
@@ -199,7 +199,7 @@ function scrollToNextView(target: string) {
     }
 
     .video-height {
-        height: 900px;
+        height: 800px;
     }
 }
 </style>

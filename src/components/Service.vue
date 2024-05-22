@@ -46,14 +46,14 @@ function leaveAction(index: number) {
 
 function rightClick() {
     document.getElementsByClassName('service-list')[0].scrollBy({
-        left: 100,
+        left: 200,
         behavior: 'smooth',
     })
 }
 
 function leftClick() {
     document.getElementsByClassName('service-list')[0].scrollBy({
-        left: -100,
+        left: -200,
         behavior: 'smooth',
     })
 }
