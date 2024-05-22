@@ -1,4 +1,29 @@
 <script setup lang="ts">
+import { reactive } from 'vue';
+
+let state = reactive({
+    items: [{
+        title: "DePIN Projects",
+        content: "100+",
+        img: 'one',
+        size: 'ssize-1',
+    }, {
+        title: "Projected Growth by 2028",
+        content: "Expected to reach $3.5 trillion",
+        img: 'two',
+        size: 'ssize-2',
+    }, {
+        title: "DePIN Market Value",
+        content: "Over $10 billion",
+        img: 'three',
+        size: 'ssize-3',
+    }, {
+        title: "Growth Potential in 1-2 Years",
+        content: "$1 trillion to $2 trillion",
+        img: 'four',
+        size: 'ssize-4',
+    }]
+})
 </script>
 
 <template>
@@ -29,29 +54,13 @@
                 </div>
 
                 <div class="industry-change-view">
-                    <div class="s-1">
-                        <div class="card-t-1">DePIN Projects</div>
-                        <br>
-                        <div class="card-t-2">100+</div>
-                        <img src="../assets/industry_depin_projects@2x.png" width="286" height="299" alt="">
-                    </div>
-                    <div class="s-2">
-                        <div class="card-t-1">Projected Growth by 2028</div>
-                        <br>
-                        <div class="card-t-2">Expected to reach $3.5 trillion</div>
-                        <img src="../assets/industry_projected_growth@2x.png" width="286" height="400" alt="">
-                    </div>
-                    <div class="s-3">
-                        <div class="card-t-1">DePIN Market Value</div>
-                        <br>
-                        <div class="card-t-2">Over $10 billion</div>
-                        <img src="../assets/industry_market_value@2x.png" width="286" height="461" alt="">
-                    </div>
-                    <div class="s-4">
-                        <div class="card-t-1">Growth Potential in 1-2 Years</div>
-                        <br>
-                        <div class="card-t-2">$1 trillion to $2 trillion</div>
-                        <img src="../assets/industry_growth_potential@2x.png" width="286" height="537" alt="">
+                    <div class="industry-content-view">
+                        <div v-for="(item, i) in state.items" :key="i" class="s-card" :class="[item.img, item.size]">
+                            <div class="content-view">
+                                <div class="card-t1 card-t1-f">{{ item.title }}</div>
+                                <div class="card-t2 card-t2-f">{{ item.content }}</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -66,12 +75,6 @@
     border-radius: 100px 100px 0px 0px;
 }
 
-.mid-view-2 {
-    margin: 0 auto;
-    width: 78%;
-    padding-top: 140px;
-}
-
 .id-title-view {
     font-weight: 600;
     text-align: left;
@@ -83,6 +86,12 @@
 }
 
 @media screen and (max-width: 767px) {
+    .mid-view-2 {
+        margin: 0 auto;
+        width: 78%;
+        padding-top: 140px;
+    }
+
     .id-title-font {
         font-size: 40px;
         line-height: 47px;
@@ -95,6 +104,12 @@
 }
 
 @media screen and (min-width: 768px) {
+    .mid-view-2 {
+        margin: 0 auto;
+        width: 62.5%;
+        padding-top: 140px;
+    }
+
     .id-title-font {
         font-size: 64px;
         line-height: 75px;
@@ -129,59 +144,135 @@
     text-transform: none;
 }
 
-.industry-change-view {
+.industry-content-view {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
-.s-1 {
-    width: 286px;
-    height: 414px;
-    padding-top: 238px;
+@media screen and (max-width: 767px) {
+    .ssize-1 {
+        width: 138px;
+        height: 231px;
+    }
+
+    .ssize-2 {
+        width: 138px;
+        height: 231px;
+    }
+
+    .ssize-3 {
+        width: 138px;
+        height: 231px;
+    }
+
+    .ssize-4 {
+        width: 138px;
+        height: 231px;
+    }
 }
 
-.s-2 {
-    width: 286px;
-    height: 642px;
-    margin-left: 20px;
-    padding-top: 137px
+@media screen and (min-width: 768px) {
+    .ssize-1 {
+        width: 286px;
+        height: 299px;
+    }
+
+    .ssize-2 {
+        width: 286px;
+        height: 400px;
+    }
+
+    .ssize-3 {
+        width: 286px;
+        height: 463px;
+    }
+
+    .ssize-4 {
+        width: 286px;
+        height: 537px;
+    }
 }
 
-.s-3 {
-    width: 286px;
-    height: 685px;
-    margin-left: 20px;
-    padding-top: 76px;
+.s-card {
+    align-self: end;
+    border: 1px solid rgba(63, 102, 242, 0.39);
+    border-radius: 10px;
+    margin-top: 30px;
 }
 
-.s-4 {
-    width: 286px;
-    height: 838px;
-    margin-left: 20px;
+.one {
+    background: no-repeat center/100% url(../assets/industry_depin_projects@2x.png);
+    background-position: bottom;
 }
 
-.card-t-1 {
-    width: 226px;
-    height: 22px;
+.two {
+    background: no-repeat center/100% url(../assets/industry_projected_growth@2x.png);
+    background-position: bottom;
+}
+
+.three {
+    background: no-repeat center/100% url(../assets/industry_market_value@2x.png);
+    background-position: bottom;
+}
+
+.four {
+    background: no-repeat center/100% url(../assets/industry_growth_potential@2x.png);
+    background-position: bottom;
+}
+
+.card-t1 {
     font-weight: 400;
-    font-size: 18px;
     color: #FFFFFF;
-    line-height: 25px;
     text-align: left;
     font-style: normal;
     text-transform: none;
 }
 
-.card-t-2 {
-    width: 226px;
-    height: 50px;
+.card-t2 {
     font-weight: 600;
-    font-size: 36px;
-    line-height: 50px;
     text-align: left;
     font-style: normal;
     text-transform: none;
     background-image: linear-gradient(0deg, #1B4DFF 0%, #01FFFF 100%);
     color: transparent;
     background-clip: text;
+}
+
+@media screen and (max-width: 767px) {
+    .content-view {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 30px;
+    }
+
+    .card-t1-f {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .card-t2-f {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .content-view {
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 30px;
+    }
+
+    .card-t1-f {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .card-t2-f {
+        font-size: 36px;
+        line-height: 50px;
+    }
 }
 </style>

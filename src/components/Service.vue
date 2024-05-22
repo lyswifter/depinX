@@ -96,6 +96,7 @@ function leftClick() {
 <style scoped>
 .service-view {
     width: 100%;
+    padding-top: 180px;
     padding-bottom: 100px;
     background: #040C27;
 }

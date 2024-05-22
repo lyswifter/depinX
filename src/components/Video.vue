@@ -105,12 +105,6 @@ function scrollToNextView(target: string) {
     background: rgba(9, 20, 58);
 }
 
-.mid-view {
-    margin: 0 auto;
-    width: 78%;
-    padding-top: 80px;
-}
-
 .line-1 {
     width: 0px;
     height: 80px;
@@ -129,6 +123,12 @@ function scrollToNextView(target: string) {
 }
 
 @media screen and (max-width: 767px) {
+    .mid-view {
+        margin: 0 auto;
+        width: 78%;
+        padding-top: 80px;
+    }
+
     .ball-dot-view {
         display: none;
     }
@@ -160,6 +160,12 @@ function scrollToNextView(target: string) {
 }
 
 @media screen and (min-width: 768px) {
+    .mid-view {
+        margin: 0 auto;
+        width: 62.5%;
+        padding-top: 80px;
+    }
+
     .ball-dot-view img {
         position: absolute;
         right: 0;
