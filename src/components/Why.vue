@@ -64,30 +64,33 @@ let state = reactive({
 
                 <br>
                 <div class="checknode-view">
-                    <div class="text-2">
-                        Run a Checker Node!
-                    </div>
-                    <div class="text-3">
-                        —— Your best choice !
-                    </div>
-
-                    <div style="display: flex;margin-top: 80px;">
-                        <div class="contact-v">
-                            <div class="text-4">Contact</div>
-                            <br>
-                            <div style="display: flex;">
-                                <img src="../assets/icon_wechat@2x.png" width="20" height="20" alt="">
-                                <div class="text-5">wxid 5bzocyoxb5hi21</div>
-                            </div>
-                            <div style="display: flex;">
-                                <img src="../assets/icon_tg@2x.png" width="20" height="20" alt="">
-                                <div class="text-5">@DEPINX OFFICIAL</div>
-                            </div>
+                    <div style="margin: 40px;">
+                        <div class="text-2">
+                            Run a Checker Node!
                         </div>
-                        <div class="flex-grow" />
-                        <div><img src="../assets/code_wechat_checker_node@2x.png" width="151" height="151" alt=""></div>
-                        <div style="margin-left: 40px;"><img src="../assets/code_tg_checker_node@2x.png" width="151"
-                                height="151" alt=""></div>
+                        <div class="text-3">
+                            —— Your best choice !
+                        </div>
+
+                        <div style="display: flex;margin-top: 80px;">
+                            <div class="contact-v">
+                                <div class="text-4">Contact</div>
+                                <br>
+                                <div style="display: flex;">
+                                    <img src="../assets/icon_wechat@2x.png" width="20" height="20" alt="">
+                                    <div class="text-5">wxid 5bzocyoxb5hi21</div>
+                                </div>
+                                <div style="display: flex;">
+                                    <img src="../assets/icon_tg@2x.png" width="20" height="20" alt="">
+                                    <div class="text-5">@DEPINX OFFICIAL</div>
+                                </div>
+                            </div>
+                            <div class="flex-grow" />
+                            <div><img src="../assets/code_wechat_checker_node@2x.png" width="151" height="151" alt="">
+                            </div>
+                            <div style="margin-left: 40px;"><img src="../assets/code_tg_checker_node@2x.png" width="151"
+                                    height="151" alt=""></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,7 +102,6 @@ let state = reactive({
 .why-view {
     width: 100%;
     padding-top: 80px;
-    /* padding-bottom: 100px; */
     background: linear-gradient(180deg, #07195C 0%, #040C27 50%);
 }
 
@@ -192,7 +194,13 @@ let state = reactive({
     margin: 0 auto;
     margin-top: 40px;
     height: 437px;
+    border-radius: 30px;
+    border: 1px solid rgba(63, 102, 242, 0.3);
     background: no-repeat center/100% url(../assets/acnode_best_choice@2x.png);
+}
+
+.checknode-view:hover {
+    border-color: rgba(27, 77, 255, 1);
 }
 
 .text-2 {

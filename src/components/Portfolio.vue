@@ -71,6 +71,7 @@ let state = reactive({
 <style scoped>
 .portfolio-view {
     background: #011325;
+    padding-top: 200px;
 }
 
 .mid-view {
@@ -101,6 +102,7 @@ let state = reactive({
     width: 100%;
     height: 595px;
     background: no-repeat center/100% url(../assets/portfolio_bg@2x.png);
+    background-size: cover;
 }
 
 .row-view {
