@@ -14,8 +14,7 @@ function scrollToNextView(target: string) {
     <div>
         <div class="video-container video-height">
             <video class="myvideo" muted autoplay="true" loop="true">
-                <source src="../assets/shadergradient.webm" type="video/webm">
-                <source src="../assets/shadergradient.webm" type="video/">
+                <source src="../assets/shadergradient.mp4" type="video/mp4">
             </video>
 
             <div class="videocontent">
