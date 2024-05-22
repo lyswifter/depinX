@@ -50,7 +50,7 @@ let state = reactive({
     <div class="portfolio-view">
         <div class="title-v">
             <div class="mid-view">
-                <div class="title">Our Portfolio</div>
+                <div class="title title-f">Our Portfolio</div>
             </div>
         </div>
 
@@ -74,9 +74,30 @@ let state = reactive({
     padding-top: 200px;
 }
 
-.mid-view {
-    width: 1200px;
-    margin: 0 auto;
+@media screen and (max-width: 767px) {
+    .mid-view {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .title-f {
+        font-size: 40px;
+        line-height: 47px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mid-view {
+        width: 62.5%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+
+    .title-f {
+        font-size: 64px;
+        line-height: 75px;
+    }
 }
 
 .title-v {
@@ -85,11 +106,7 @@ let state = reactive({
 }
 
 .title {
-    width: 427px;
-    height: 78px;
     font-weight: 600;
-    font-size: 64px;
-    line-height: 75px;
     text-align: left;
     font-style: normal;
     text-transform: none;
@@ -100,19 +117,18 @@ let state = reactive({
 
 .content-v {
     width: 100%;
-    height: 595px;
     background: no-repeat center/100% url(../assets/portfolio_bg@2x.png);
     background-size: cover;
 }
 
 .row-view {
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .logo-v {
-    height: 56px;
-    margin-left: 20px;
+    height: 52px;
     margin-top: 20px;
     padding: 20px 30px;
     background: rgba(6, 15, 50, 0.54);
@@ -121,11 +137,6 @@ let state = reactive({
 }
 
 .logo-v:hover {
-    /* border-radius: 30px 30px 30px 30px; */
-    /* background: rgba(6, 15, 50, 0.54); */
-    /* border: 1px solid transparent; */
-    /* background-clip: padding-box; */
-    /* border-image: linear-gradient(90deg, rgba(27, 77, 255, 1), rgba(1, 255, 255, 1)) 2 2; */
     border-color: rgba(27, 77, 255, 1);
 }
 </style>

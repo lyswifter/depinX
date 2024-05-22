@@ -29,7 +29,7 @@ let state = reactive({
                 <div>
                     <div><img src="../assets/icon@2x.png" width="50" height="50" alt="" class="m-l-40 m-t-40"></div>
                     <div>
-                        <div style="display: flex;" class="border-b-1">
+                        <div style="display: flex;flex-wrap: wrap;" class="border-b-1">
                             <div class="m-l-40 m-t-40 m-b-40">
                                 <div class="text-1">For Investment Cooperation: </div>
                                 <div style="display: flex;">
@@ -47,7 +47,7 @@ let state = reactive({
                             </div>
                         </div>
 
-                        <div style="display: flex;justify-content:start;">
+                        <div style="display: flex;justify-content:center;flex-wrap: wrap;">
                             <div v-for="(item, i) in state.links" :key="i" style="width: 50%;">
                                 <div style="padding: 40px;" :class="i != 0 ? 'border-l-1' : 'border-l-none'">
                                     <div><img :src="item.logo" width="50" height="50" alt=""></div>
@@ -74,9 +74,19 @@ let state = reactive({
     background: linear-gradient(180deg, #07195C 0%, #000000 100%);
 }
 
-.mid-view {
-    width: 1200px;
-    margin: 0 auto;
+@media screen and (max-width: 767px) {
+    .mid-view {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mid-view {
+        width: 62.5%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
 
 .title-v {

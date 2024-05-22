@@ -115,6 +115,7 @@ function scrollToNextView(target: string) {
 
 .text-2 {
     width: 100%;
+    max-width: 820px;
     font-weight: 400;
     color: #D7E0FF;
     text-align: left;
