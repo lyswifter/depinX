@@ -66,7 +66,7 @@ let state = reactive({
                         <div class="text-2 text-2-f">
                             Run a Checker Node!
                         </div>
-                        <div class="text-3">
+                        <div class="text-3 text-3-f">
                             —— Your best choice !
                         </div>
 
@@ -274,9 +274,7 @@ let state = reactive({
 
 .text-3 {
     font-weight: 400;
-    font-size: 30px;
     color: #FFFFFF;
-    line-height: 35px;
     text-align: left;
     font-style: normal;
     text-transform: none;
@@ -342,6 +340,11 @@ let state = reactive({
         font-size: 36px;
         line-height: 42px;
     }
+
+    .text-3-f {
+        font-size: 20px;
+        line-height: 23px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -353,6 +356,11 @@ let state = reactive({
     .text-2-f {
         font-size: 48px;
         line-height: 56px;
+    }
+
+    .text-3-f {
+        font-size: 30px;
+        line-height: 35px;
     }
 }
 </style>
