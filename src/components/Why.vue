@@ -266,9 +266,7 @@ let state = reactive({
 
 .text-2 {
     font-weight: 600;
-    font-size: 48px;
     color: #FFFFFF;
-    line-height: 56px;
     text-align: left;
     font-style: normal;
     text-transform: none;
@@ -339,12 +337,22 @@ let state = reactive({
         background: no-repeat center/100% url(../assets/acnode_best_choice_mobile@2x.png);
         background-position: top
     }
+
+    .text-2-f {
+        font-size: 36px;
+        line-height: 42px;
+    }
 }
 
 @media screen and (min-width: 768px) {
     .qr-code {
         width: 151px;
         height: 151px;
+    }
+
+    .text-2-f {
+        font-size: 48px;
+        line-height: 56px;
     }
 }
 </style>
