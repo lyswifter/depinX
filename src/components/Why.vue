@@ -333,10 +333,12 @@ let state = reactive({
 
     .contact-v {
         width: 100%;
+        margin-top: 200px;
     }
 
     .checknode-view {
         background: no-repeat center/100% url(../assets/acnode_best_choice_mobile@2x.png);
+        background-position: top
     }
 }
 

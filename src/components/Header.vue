@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineEmits, reactive } from 'vue';
+import { reactive } from 'vue';
 
 let state = reactive({
     defaultIdx: 0,

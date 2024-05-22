@@ -89,7 +89,7 @@ let state = reactive({
     .mid-view-2 {
         margin: 0 auto;
         width: 78%;
-        padding-top: 140px;
+        padding-top: 70px;
     }
 
     .id-title-font {

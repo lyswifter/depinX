@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineEmits } from "vue";
-
 const emit = defineEmits({
     scrollToNextView(target: string) {
         console.log(target)

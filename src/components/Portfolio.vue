@@ -71,7 +71,7 @@ let state = reactive({
 <style scoped>
 .portfolio-view {
     background: #011325;
-    padding-top: 200px;
+    padding-top: 100px;
 }
 
 @media screen and (max-width: 767px) {
