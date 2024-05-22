@@ -2,7 +2,9 @@
 import { defineEmits } from "vue";
 
 const emit = defineEmits({
-    scrollToNextView(target: string){}
+    scrollToNextView(target: string) {
+        console.log(target)
+    }
 })
 
 function scrollToNextView(target: string) {
@@ -12,7 +14,7 @@ function scrollToNextView(target: string) {
 
 <template>
     <div>
-        <div class="video-container">
+        <div class="video-container video-height">
             <video class="myvideo" src="../assets/shadergradient.webm" muted autoplay="true" loop="true">
             </video>
 
@@ -20,12 +22,14 @@ function scrollToNextView(target: string) {
                 <div>
                     <img src="../assets/logo_banner@2x.png" width="130" height="97" alt="">
                 </div>
-
+                <br>
                 <div>
-                    <img src="../assets/txt_banner@2x.png" width="1146px" height="168px" alt="">
+                    <img class="banner-view" src="../assets/txt_banner@2x.png" width="1146px" height="168px" alt="">
+                    <img class="banner-m-view" src="../assetsm/txt_banner_for_mobile@2x.png" width="295" height="166"
+                        alt="">
                 </div>
 
-                <div class="text_1">
+                <div class="text-1">
                     Connect Physical World With Blockchain
                 </div>
 
@@ -40,10 +44,10 @@ function scrollToNextView(target: string) {
 
         <div class="vision-container" id="VisionAnchor">
             <div class="mid-view">
-                <div class="line_1">
-
+                <div class="line-1">
                 </div>
-                <div class="text_2">
+                <br>
+                <div class="text-2 text-adopt">
                     Our vision is to support early-stage DePIN projects through various means
                     including technical support (algorithm optimization, hardware and software
                     enhancements, technical maintenance, equipment supply), direct investment,
@@ -52,10 +56,8 @@ function scrollToNextView(target: string) {
                     We are backed by top Filecoin mining service providers with
                     an asset management scale of $20 million.
                 </div>
-
                 <br>
-
-                <div class="text_2">
+                <div class="text-2 text-adopt">
                     Our core members boast over five
                     years of IT and blockchain industry experience at leading institutions such as
                     Google, Baidu, Hashkey, and OKX, and are globally distributed in Hong Kong,
@@ -74,7 +76,6 @@ function scrollToNextView(target: string) {
 .video-container {
     position: relative;
     width: 100%;
-    height: 908px;
     overflow: hidden;
 }
 
@@ -92,22 +93,10 @@ function scrollToNextView(target: string) {
 
 .videocontent {
     position: absolute;
-    top: 30%;
+    top: 90px;
     left: 10%;
-    width: 1200px;
+    width: 100%;
     color: white;
-}
-
-.text_1 {
-    width: 807px;
-    height: 49px;
-    font-weight: 300;
-    font-size: 40px;
-    color: #D7E0FF;
-    line-height: 47px;
-    text-align: left;
-    font-style: normal;
-    text-transform: none;
 }
 
 .vision-container {
@@ -118,11 +107,11 @@ function scrollToNextView(target: string) {
 
 .mid-view {
     margin: 0 auto;
-    width: 1200px;
-    padding-top: 200px;
+    width: 78%;
+    padding-top: 80px;
 }
 
-.line_1 {
+.line-1 {
     width: 0px;
     height: 80px;
     border-radius: 0px 0px 0px 0px;
@@ -130,24 +119,80 @@ function scrollToNextView(target: string) {
     border-image: linear-gradient(360deg, rgba(27, 77, 255, 1), rgba(1, 255, 255, 1)) 2 2;
 }
 
-.text_2 {
-    width: 820px;
+.text-2 {
+    width: 100%;
     font-weight: 400;
-    font-size: 28px;
     color: #D7E0FF;
-    line-height: 45px;
     text-align: left;
     font-style: normal;
     text-transform: none;
 }
 
-.ball-dot-view img {
-    position: absolute;
-    right: 0;
-    top: 80%;
-    bottom: 50%;
-    width: 550px;
-    height: 1100px;
-    z-index: 1;
+@media screen and (max-width: 767px) {
+    .ball-dot-view {
+        display: none;
+    }
+
+    .banner-view {
+        display: none;
+    }
+
+    .text-1 {
+        width: 295px;
+        height: 58px;
+        font-weight: 300;
+        font-size: 24px;
+        color: #D7E0FF;
+        line-height: 28px;
+        text-align: left;
+        font-style: normal;
+        text-transform: none;
+    }
+
+    .text-adopt {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .video-height {
+        height: 600px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .ball-dot-view img {
+        position: absolute;
+        right: 0;
+        top: 80%;
+        bottom: 50%;
+        width: 550px;
+        height: 1100px;
+        z-index: 1;
+    }
+
+    .banner-m-view {
+        display: none;
+    }
+
+    .text-1 {
+        max-width: 807px;
+        height: 49px;
+        font-weight: 300;
+        font-size: 40px;
+        color: #D7E0FF;
+        line-height: 47px;
+        text-align: left;
+        font-style: normal;
+        text-transform: none;
+    }
+
+    .text-adopt {
+        font-size: 28px;
+        line-height: 45px;
+    }
+
+    .video-height {
+        height: 900px;
+    }
 }
 </style>

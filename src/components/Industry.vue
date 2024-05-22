@@ -5,11 +5,11 @@
     <div style="background: rgba(9, 20, 58);">
         <div class="industry-view">
             <div class="mid-view-2">
-                <div class="id-title-view">Industry Background</div>
+                <div class="id-title-view id-title-font">Industry Background</div>
                 <br>
                 <div class="line-2"></div>
                 <br>
-                <div class="text-3">
+                <div class="text-3 text-3-f">
                     DePIN stands for "Decentralized Physical Infrastructure Networks," representing a new type
                     of decentralized network for physical infrastructure. The goal of this network is to
                     integrate
@@ -17,12 +17,13 @@
                     create a vast infrastructure network.
                 </div>
                 <br>
-                <div class="text-3">
+                <div class="text-3 text-3-f">
                     DePIN projects are numerous, with over 100 initiatives contributing to a market value
                     exceeding $10 billion. These projects are expected to see significant growth, with
                     potential to expand to a scale of $100 billion to $200 billion within 1-2 years.
                 </div>
-                <div class="text-4">
+                <br>
+                <div class="text-4 text-3-f">
                     According to projections by Messari, by the year 2028, the DePIN sector could grow to a
                     staggering $3.5 trillion, providing ample growth space and strategic direction for our fund.
                 </div>
@@ -61,29 +62,48 @@
 <style scoped>
 .industry-view {
     width: 100%;
-    height: 1266px;
     background: linear-gradient(180deg, #07195C 0%, #040C27 100%);
     border-radius: 100px 100px 0px 0px;
 }
 
 .mid-view-2 {
     margin: 0 auto;
-    width: 1200px;
+    width: 78%;
     padding-top: 140px;
 }
 
 .id-title-view {
-    width: 703px;
-    height: 78px;
     font-weight: 600;
-    font-size: 64px;
-    line-height: 75px;
     text-align: left;
     font-style: normal;
     text-transform: none;
     background-image: linear-gradient(179deg, #1B4DFF 0%, #01FFFF 100%);
     color: transparent;
     background-clip: text;
+}
+
+@media screen and (max-width: 767px) {
+    .id-title-font {
+        font-size: 40px;
+        line-height: 47px;
+    }
+
+    .text-3-f {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .id-title-font {
+        font-size: 64px;
+        line-height: 75px;
+    }
+
+    .text-3-f {
+        font-size: 18px;
+        line-height: 25px;
+    }
 }
 
 .line-2 {
@@ -94,24 +114,16 @@
 }
 
 .text-3 {
-    width: 1200px;
-    height: 75px;
     font-weight: 300;
-    font-size: 18px;
     color: #D7E0FF;
-    line-height: 25px;
     text-align: left;
     font-style: normal;
     text-transform: none;
 }
 
 .text-4 {
-    width: 1200px;
-    height: 50px;
     font-weight: 600;
-    font-size: 18px;
     color: #D7E0FF;
-    line-height: 25px;
     text-align: left;
     font-style: normal;
     text-transform: none;
