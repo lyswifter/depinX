@@ -92,7 +92,7 @@ let state = reactive({
                                     <img src="../assets/code_wechat_checker_node@2x.png" width="100%" height="100%"
                                         alt="">
                                 </div>
-                                <div class="qr-code" style="margin-left: 40px;">
+                                <div class="qr-code" style="margin-left: 20px;">
                                     <img src="../assets/code_tg_checker_node@2x.png" width="100%" height="100%" alt="">
                                 </div>
                             </div>
@@ -328,7 +328,7 @@ let state = reactive({
 
     .contact-v {
         width: 100%;
-        margin-top: 200px;
+        margin-top: 280px;
     }
 
     .checknode-view {
@@ -337,8 +337,8 @@ let state = reactive({
     }
 
     .text-2-f {
-        font-size: 36px;
-        line-height: 42px;
+        font-size: 30px;
+        line-height: 35px;
     }
 
     .text-3-f {
