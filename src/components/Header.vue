@@ -112,7 +112,7 @@ function collpaseAction() {
     }
 
     .collpase-menu-item {
-        width:90%;
+        width: 40%;
         margin: 0 auto;
         height: 48px;
         font-weight: 400;

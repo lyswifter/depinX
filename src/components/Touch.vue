@@ -8,14 +8,15 @@ let state = reactive({
     links: [{
         logo: icon1,
         title: "@DePIN_X",
-        arrow: arrow
+        arrow: arrow,
+        href: "https://x.com/depin_x",
     }, {
         logo: icon2,
         title: "@DePIN_X",
-        arrow: arrow
+        arrow: arrow,
+        href: "https://www.linkedin.com/company/depin-x-cappital",
     }],
     sites: [{
-
     }]
 })
 </script>
@@ -32,18 +33,22 @@ let state = reactive({
                         <div style="display: flex;flex-wrap: wrap;" class="border-b-1">
                             <div class="m-l-40 m-t-40 m-b-40">
                                 <div class="text-1">For Investment Cooperation: </div>
-                                <div style="display: flex;">
-                                    <div class="text-2">sallygu@depinxcapital.com</div>
-                                    <img src="../assets/arrow_right_up_nor@2x.png" width="16" height="16" alt="">
-                                </div>
+                                <a href="mailto:sallygu@depinxcapital.com">
+                                    <div style="display: flex;">
+                                        <div class="text-2">sallygu@depinxcapital.com</div>
+                                        <img src="../assets/arrow_right_up_nor@2x.png" width="16" height="16" alt="">
+                                    </div>
+                                </a>
                             </div>
 
                             <div class="m-l-40 m-t-40 m-b-40">
                                 <div class="text-1">For Mining Cooperation: </div>
-                                <div style="display: flex;">
-                                    <div class="text-2">myron_zhu@depinxcapital.com</div>
-                                    <img src="../assets/arrow_right_up_nor@2x.png" width="16" height="16" alt="">
-                                </div>
+                                <a href="mailto:myron_zhu@depinxcapital.com">
+                                    <div style="display: flex;">
+                                        <div class="text-2">myron_zhu@depinxcapital.com</div>
+                                        <img src="../assets/arrow_right_up_nor@2x.png" width="16" height="16" alt="">
+                                    </div>
+                                </a>
                             </div>
                         </div>
 
@@ -51,12 +56,13 @@ let state = reactive({
                             <div v-for="(item, i) in state.links" :key="i" style="width: 50%;">
                                 <div style="padding: 40px;" :class="i != 0 ? 'border-l-1' : 'border-l-none'">
                                     <div><img :src="item.logo" width="50" height="50" alt=""></div>
-                                    <div style="display: flex;justify-content: start;">
-                                        <div class="text-2">{{ item.title }}</div>
-                                        <img :src="item.arrow" width="16" height="16" alt="">
-                                    </div>
+                                    <a :href="item.href" target="_blank">
+                                        <div style="display: flex;justify-content: start;">
+                                            <div class="text-2">{{ item.title }}</div>
+                                            <img :src="item.arrow" width="16" height="16" alt="">
+                                        </div>
+                                    </a>
                                 </div>
-
                             </div>
                         </div>
                     </div>
