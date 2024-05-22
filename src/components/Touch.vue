@@ -127,12 +127,24 @@ let state = reactive({
     border: 1px solid rgba(63, 102, 242, 0.39);
 }
 
+.border-1:hover {
+    border-color: rgba(27, 77, 255, 1);
+}
+
 .border-b-1 {
     border-bottom: 1px solid rgba(63, 102, 242, 0.39);
 }
 
+.border-b-1:hover {
+    border-color: rgba(27, 77, 255, 1);
+}
+
 .border-l-1 {
     border-left: 1px solid rgba(63, 102, 242, 0.39);
+}
+
+.border-l-1:hover {
+    border-color: rgba(27, 77, 255, 1);
 }
 
 .border-b-none {

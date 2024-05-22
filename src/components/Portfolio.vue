@@ -27,7 +27,7 @@ let state = reactive({
     }, {
         name: "cel",
         logo: cel
-    }],[{
+    }], [{
         name: "pol",
         logo: pol
     }, {
@@ -59,10 +59,9 @@ let state = reactive({
                 <div class="logo-view">
                     <div v-for="(itemOut, i) in state.portfolios" :key="i" class="row-view">
                         <div v-for="(itemIn, j) in itemOut" :key="j">
-
                             <img :src="itemIn.logo" :alt="itemIn.name" class="logo-v">
                         </div>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -106,7 +105,7 @@ let state = reactive({
 
 .row-view {
     display: inline-flex;
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
 .logo-v {
@@ -117,5 +116,14 @@ let state = reactive({
     background: rgba(6, 15, 50, 0.54);
     border-radius: 10px 10px 10px 10px;
     border: 1px solid rgba(63, 102, 242, 0.39);
+}
+
+.logo-v:hover {
+    /* border-radius: 30px 30px 30px 30px; */
+    /* background: rgba(6, 15, 50, 0.54); */
+    /* border: 1px solid transparent; */
+    /* background-clip: padding-box; */
+    /* border-image: linear-gradient(90deg, rgba(27, 77, 255, 1), rgba(1, 255, 255, 1)) 2 2; */
+    border-color: rgba(27, 77, 255, 1);
 }
 </style>

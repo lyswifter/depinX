@@ -29,16 +29,14 @@ let state = reactive({
     }]
 })
 
-function hoverAction(index: Number) {
+function hoverAction(index: number) {
     console.log(index)
+    state.services[index].isHover = true
 }
 
-function enterAction(index: Number) {
+function leaveAction(index: number) {
     console.log(index)
-}
-
-function outAction(index: Number) {
-    console.log(index)
+    state.services[index].isHover = false
 }
 
 function rightClick() {
@@ -57,20 +55,25 @@ function leftClick() {
 </script>
 
 <template>
+    <!-- :onmouseenter="enterAction" :onmouseout="outAction" -->
+    <!-- :onmouseover="hoverAction(i)" -->
     <div>
         <div class="service-view">
             <div class="mid-view">
                 <div class="service-title">What We Can Provide</div>
                 <div class="service-list">
-                    <div v-for="(item, i) in state.services" :key="i" class="service-card" :onmouseover="hoverAction(i)"
-                        :onmouseenter="enterAction" :onmouseout="outAction">
-                        <div v-if="!item.isHover" class="normal-card">
-                            <div class="normal-content"><img :src="item.img" width="320" height="382" alt=""></div>
+                    <div v-for="(item, i) in state.services" :key="i" class="service-card" @mouseover="hoverAction(i)"
+                        @mouseleave="leaveAction(i)">
+                        <div class="normal-card" v-if="!item.isHover">
+                            <div class="normal-content">
+                                <img :src="item.img" width="320" height="382" alt="">
+                            </div>
                             <div class="normal-title">{{ item.title }}</div>
                         </div>
-
-                        <div v-else class="hover-card">
+                        <div class="hover-card" v-else>
+                            <br>
                             <div class="hover-title">{{ item.title }}</div>
+                            <br>
                             <div class="hover-content">{{ item.hoverContent }}</div>
                         </div>
                     </div>
@@ -125,7 +128,6 @@ function leftClick() {
 
 .service-card {
     margin-left: 40px;
-    padding-bottom: 80px;
     width: 400px;
     background: linear-gradient(180deg, #0B1841 0%, #050E2D 100%);
     border-image: linear-gradient(90deg, rgba(27, 77, 255, 1), rgba(1, 255, 255, 1)) 4 4;
@@ -134,14 +136,56 @@ function leftClick() {
     clip-path: inset(0 round 10px);
 }
 
+.service-card:hover {
+    border-bottom: none;
+}
+
+.normal-card {
+    width: 400px;
+    height: 580px;
+}
+
 .normal-title {
     width: 100%;
-    height: 39px;
     font-weight: 600;
     font-size: 32px;
     color: #FFFFFF;
     line-height: 38px;
     text-align: center;
+    font-style: normal;
+    text-transform: none;
+}
+
+.hover-card {
+    width: 400px;
+    height: 580px;
+    background: linear-gradient(180deg, #1142F0 0%, #15E6E6 100%);
+    border-radius: 30px 30px 30px 30px;
+}
+
+.hover-title {
+    width: 340px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-weight: 600;
+    font-size: 32px;
+    color: #FFFFFF;
+    line-height: 38px;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+}
+
+.hover-content {
+    width: 320px;
+    height: 350px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 25px;
+    text-align: left;
     font-style: normal;
     text-transform: none;
 }

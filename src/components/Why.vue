@@ -86,7 +86,8 @@ let state = reactive({
                         </div>
                         <div class="flex-grow" />
                         <div><img src="../assets/code_wechat_checker_node@2x.png" width="151" height="151" alt=""></div>
-                        <div style="margin-left: 40px;"><img src="../assets/code_tg_checker_node@2x.png" width="151" height="151" alt=""></div>
+                        <div style="margin-left: 40px;"><img src="../assets/code_tg_checker_node@2x.png" width="151"
+                                height="151" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -136,6 +137,15 @@ let state = reactive({
     height: 350px;
     border-radius: 30px 30px 30px 30px;
     border: 1px solid rgba(63, 102, 242, 0.3);
+}
+
+.item-card:hover {
+    /* border-radius: 30px 30px 30px 30px;
+    background: rgba(6, 15, 50, 0.54);
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    border-image: linear-gradient(90deg, rgba(27, 77, 255, 1), rgba(1, 255, 255, 1)) 2 2; */
+    border-color: rgba(27, 77, 255, 1);
 }
 
 .one {
