@@ -106,7 +106,7 @@ let state = reactive({
 @media screen and (min-width: 768px) {
     .mid-view-2 {
         margin: 0 auto;
-        width: 62.5%;
+        width: 1200px;
         padding-top: 140px;
     }
 

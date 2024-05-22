@@ -95,8 +95,7 @@ let state = reactive({
 
 @media screen and (min-width: 768px) {
     .mid-view {
-        width: 62.5%;
-        max-width: 1200px;
+        width: 1200px;
         margin: 0 auto;
     }
 
@@ -108,7 +107,7 @@ let state = reactive({
 
     .content-v {
         width: 100%;
-        padding-bottom: 366px;
+        padding-bottom: 200px;
         background: no-repeat center/100% url(../assets/portfolio_bg@2x.png);
         background-size: cover;
     }

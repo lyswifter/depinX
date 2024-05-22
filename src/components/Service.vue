@@ -108,7 +108,7 @@ function leftClick() {
 @media screen and (max-width: 767px) {
     .mid-view {
         margin: 0 auto;
-        width: 78%;
+        width: 80%;
     }
 
     .service-title-f {
@@ -120,7 +120,7 @@ function leftClick() {
 @media screen and (min-width: 768px) {
     .mid-view {
         margin: 0 auto;
-        width: 62.5%;
+        width: 1200px;
     }
 
     .service-title-f {

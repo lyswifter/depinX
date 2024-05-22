@@ -88,7 +88,7 @@ function scrollToNextView(target: string) {
     display: flex;
     position: fixed;
     right: 50px;
-    bottom: 80px;
+    bottom: 50px;
     width: 124px;
     height: 44px;
     background: rgba(215, 224, 255, 0.1);

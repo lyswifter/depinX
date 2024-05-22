@@ -75,7 +75,6 @@ function scrollToNextView(target: string) {
     position: relative;
     width: 100%;
     overflow: hidden;
-    /* background: rgba(9, 20, 58); */
 }
 
 .myvideo {
@@ -162,7 +161,7 @@ function scrollToNextView(target: string) {
 @media screen and (min-width: 768px) {
     .mid-view {
         margin: 0 auto;
-        width: 62.5%;
+        width: 1200px;
         padding-top: 80px;
     }
 
