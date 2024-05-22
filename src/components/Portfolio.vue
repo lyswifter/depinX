@@ -91,6 +91,15 @@ let state = reactive({
         background: no-repeat center/100% url(../assets/portfolio_bg@2x.png);
         background-size: cover;
     }
+
+    .logo-v {
+        height: 52px;
+        margin-left: 5px;
+        padding: 6px 10px;
+        background: rgba(6, 15, 50, 0.54);
+        border-radius: 10px 10px 10px 10px;
+        border: 1px solid rgba(63, 102, 242, 0.39);
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -110,6 +119,16 @@ let state = reactive({
         padding-bottom: 200px;
         background: no-repeat center/100% url(../assets/portfolio_bg@2x.png);
         background-size: cover;
+    }
+
+    .logo-v {
+        height: 52px;
+        margin-left: 10px;
+        margin-top: 20px;
+        padding: 20px 30px;
+        background: rgba(6, 15, 50, 0.54);
+        border-radius: 10px 10px 10px 10px;
+        border: 1px solid rgba(63, 102, 242, 0.39);
     }
 }
 
@@ -131,16 +150,7 @@ let state = reactive({
 .row-view {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.logo-v {
-    height: 52px;
-    margin-top: 20px;
-    padding: 20px 30px;
-    background: rgba(6, 15, 50, 0.54);
-    border-radius: 10px 10px 10px 10px;
-    border: 1px solid rgba(63, 102, 242, 0.39);
+    justify-content: start;
 }
 
 .logo-v:hover {
