@@ -34,6 +34,11 @@ function hoverAction(index: number) {
     state.services[index].isHover = true
 }
 
+function clickAction(index: number) {
+    console.log(index)
+    state.services[index].isHover = true
+}
+
 function leaveAction(index: number) {
     console.log(index)
     state.services[index].isHover = false
@@ -55,15 +60,14 @@ function leftClick() {
 </script>
 
 <template>
-    <!-- :onmouseenter="enterAction" :onmouseout="outAction" -->
-    <!-- :onmouseover="hoverAction(i)" -->
     <div>
         <div class="service-view">
             <div class="mid-view">
-                <div class="service-title">What We Can Provide</div>
+                <div class="service-title service-title-f">What We Can Provide</div>
+
                 <div class="service-list">
-                    <div v-for="(item, i) in state.services" :key="i" class="service-card" @mouseover="hoverAction(i)"
-                        @mouseleave="leaveAction(i)">
+                    <div v-for="(item, i) in state.services" :key="i" class="service-card" :class="i == 0 ? 'm-l-none' : 'm-l-40'" @mouseover="hoverAction(i)"
+                        @mouseleave="leaveAction(i)" @click="clickAction(i)">
                         <div class="normal-card" v-if="!item.isHover">
                             <div class="normal-content">
                                 <img :src="item.img" width="320" height="382" alt="">
@@ -79,7 +83,7 @@ function leftClick() {
                     </div>
                 </div>
 
-                <div style="display: flex;margin-top: 60px;margin-left: 40px;">
+                <div style="display: flex;margin-top: 60px;">
                     <div style="cursor: pointer;" @click="leftClick">
                         <img src="../assets/arrow_left_nor@2x.png" width="80" height="40" alt="">
                     </div>
@@ -101,23 +105,46 @@ function leftClick() {
     background: #040C27;
 }
 
-.mid-view {
-    margin: 0 auto;
-    width: 1200px;
+@media screen and (max-width: 767px) {
+    .mid-view {
+        margin: 0 auto;
+        width: 78%;
+    }
+
+    .service-title-f {
+        font-size: 40px;
+        line-height: 47px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mid-view {
+        margin: 0 auto;
+        width: 62.5%;
+    }
+
+    .service-title-f {
+        font-size: 64px;
+        line-height: 75px;
+    }
 }
 
 .service-title {
-    width: 726px;
-    height: 78px;
     font-weight: 600;
-    font-size: 64px;
-    line-height: 75px;
     text-align: left;
     font-style: normal;
     text-transform: none;
     background-image: linear-gradient(179deg, #1B4DFF 0%, #01FFFF 100%);
     color: transparent;
     background-clip: text;
+}
+
+.m-l-40 {
+    margin-left: 40px;
+}
+
+.m-l-none {
+    margin-left: 0px;
 }
 
 .service-list {
@@ -128,7 +155,6 @@ function leftClick() {
 }
 
 .service-card {
-    margin-left: 40px;
     width: 400px;
     background: linear-gradient(180deg, #0B1841 0%, #050E2D 100%);
     border-image: linear-gradient(90deg, rgba(27, 77, 255, 1), rgba(1, 255, 255, 1)) 4 4;
@@ -144,6 +170,11 @@ function leftClick() {
 .normal-card {
     width: 400px;
     height: 580px;
+}
+
+.normal-content {
+    width: 320px;
+    margin: 0 auto;
 }
 
 .normal-title {
