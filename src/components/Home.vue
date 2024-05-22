@@ -35,7 +35,7 @@ function scrollToNextView(target: string) {
 
 <template>
     <div class="container">
-        <el-container>
+        <!-- <el-container> -->
             <div id="topRowAnchor"></div>
             <!-- header view -->
             <HeaderView @reload-action="reloadAction" @scroll-into-view="scrollIntoView"></HeaderView>
@@ -67,16 +67,17 @@ function scrollToNextView(target: string) {
 
             </el-main>
 
-            <el-footer class="footer-view">
+            <!-- <el-footer class="footer-view"> -->
                 <FooterView></FooterView>
-            </el-footer>
-        </el-container>
+            <!-- </el-footer> -->
+        <!-- </el-container> -->
     </div>
 </template>
 
 <style scoped>
 .main-view {
     padding: 0;
+    overflow: hidden;
 }
 
 .footer-view {
@@ -87,7 +88,7 @@ function scrollToNextView(target: string) {
     display: flex;
     position: fixed;
     right: 50px;
-    bottom: 180px;
+    bottom: 80px;
     width: 124px;
     height: 44px;
     background: rgba(215, 224, 255, 0.1);

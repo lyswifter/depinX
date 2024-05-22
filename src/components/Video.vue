@@ -13,7 +13,9 @@ function scrollToNextView(target: string) {
 <template>
     <div>
         <div class="video-container video-height">
-            <video class="myvideo" src="../assets/shadergradient.webm" muted autoplay="true" loop="true">
+            <video class="myvideo" muted autoplay="true" loop="true">
+                <source src="../assets/shadergradient.webm" type="video/">
+                <source src="../assets/shadergradient.webm" type="video/">
             </video>
 
             <div class="videocontent">
@@ -62,7 +64,6 @@ function scrollToNextView(target: string) {
                     Singapore, Australia, and North America.
                 </div>
             </div>
-
         </div>
         <div class="ball-dot-view">
             <img src="../assets/ball_dot@2x.png" alt="">
@@ -75,6 +76,7 @@ function scrollToNextView(target: string) {
     position: relative;
     width: 100%;
     overflow: hidden;
+    /* background: rgba(9, 20, 58); */
 }
 
 .myvideo {
@@ -86,7 +88,7 @@ function scrollToNextView(target: string) {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -2;
+    z-index: -1;
 }
 
 .videocontent {

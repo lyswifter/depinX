@@ -96,8 +96,6 @@ let state = reactive({
 }
 
 .title-v {
-    width: 726px;
-    height: 78px;
     font-weight: 600;
     font-size: 64px;
     line-height: 75px;

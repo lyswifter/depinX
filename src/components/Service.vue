@@ -66,19 +66,19 @@ function leftClick() {
                 <div class="service-title service-title-f">What We Can Provide</div>
 
                 <div class="service-list">
-                    <div v-for="(item, i) in state.services" :key="i" class="service-card" :class="i == 0 ? 'm-l-none' : 'm-l-40'" @mouseover="hoverAction(i)"
-                        @mouseleave="leaveAction(i)" @click="clickAction(i)">
+                    <div v-for="(item, i) in state.services" :key="i" class="service-card"
+                        :class="i == 0 ? 'm-l-none' : 'm-l-40'" @mouseover="hoverAction(i)" @mouseleave="leaveAction(i)"
+                        @click="clickAction(i)">
                         <div class="normal-card" v-if="!item.isHover">
                             <div class="normal-content">
-                                <img :src="item.img" width="320" height="382" alt="">
+                                <img :src="item.img" width="100%" height="100%" alt="">
                             </div>
-                            <div class="normal-title">{{ item.title }}</div>
+                            <div class="normal-title normal-title-f">{{ item.title }}</div>
                         </div>
                         <div class="hover-card" v-else>
                             <br>
-                            <div class="hover-title">{{ item.title }}</div>
-                            <br>
-                            <div class="hover-content">{{ item.hoverContent }}</div>
+                            <div class="hover-title hover-title-f">{{ item.title }}</div>
+                            <div class="hover-content hover-content-f">{{ item.hoverContent }}</div>
                         </div>
                     </div>
                 </div>
@@ -155,7 +155,6 @@ function leftClick() {
 }
 
 .service-card {
-    width: 400px;
     background: linear-gradient(180deg, #0B1841 0%, #050E2D 100%);
     border-image: linear-gradient(90deg, rgba(27, 77, 255, 1), rgba(1, 255, 255, 1)) 4 4;
     border-bottom: 4px solid;
@@ -167,56 +166,98 @@ function leftClick() {
     border-bottom: none;
 }
 
-.normal-card {
-    width: 400px;
-    height: 580px;
+@media screen and (max-width: 767px) {
+    .normal-card {
+        width: 240px;
+        height: 440px;
+    }
+
+    .normal-content {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .normal-title-f {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .hover-card {
+        width: 240px;
+        height: 440px;
+        background: linear-gradient(180deg, #1142F0 0%, #15E6E6 100%);
+        border-radius: 30px 30px 30px 30px;
+    }
+
+    .hover-title-f {
+        font-size: 18px;
+        line-height: 23px;
+    }
+
+    .hover-content-f {
+        font-size: 14px;
+        line-height: 20px;
+    }
 }
 
-.normal-content {
-    width: 320px;
-    margin: 0 auto;
+@media screen and (min-width: 768px) {
+    .normal-card {
+        width: 400px;
+        height: 580px;
+    }
+
+    .normal-content {
+        width: 320px;
+        height: 382px;
+        margin: 0 auto;
+    }
+
+    .normal-title-f {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .hover-card {
+        width: 400px;
+        height: 580px;
+        background: linear-gradient(180deg, #1142F0 0%, #15E6E6 100%);
+        border-radius: 30px 30px 30px 30px;
+    }
+
+    .hover-title-f {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .hover-content-f {
+        font-size: 18px;
+        line-height: 25px;
+    }
 }
 
 .normal-title {
-    width: 100%;
     font-weight: 600;
-    font-size: 32px;
     color: #FFFFFF;
-    line-height: 38px;
     text-align: center;
     font-style: normal;
     text-transform: none;
 }
 
-.hover-card {
-    width: 400px;
-    height: 580px;
-    background: linear-gradient(180deg, #1142F0 0%, #15E6E6 100%);
-    border-radius: 30px 30px 30px 30px;
-}
-
 .hover-title {
-    width: 340px;
-    margin-left: 40px;
-    margin-right: 40px;
+    width: 85%;
+    margin: 0 auto;
     font-weight: 600;
-    font-size: 32px;
     color: #FFFFFF;
-    line-height: 38px;
     text-align: left;
     font-style: normal;
     text-transform: none;
 }
 
 .hover-content {
-    width: 320px;
-    height: 350px;
-    margin-left: 40px;
-    margin-right: 40px;
+    width: 80%;
+    margin: 0 auto;
     font-weight: 400;
-    font-size: 18px;
     color: #FFFFFF;
-    line-height: 25px;
     text-align: left;
     font-style: normal;
     text-transform: none;

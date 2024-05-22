@@ -84,6 +84,13 @@ let state = reactive({
         font-size: 40px;
         line-height: 47px;
     }
+
+    .content-v {
+        width: 100%;
+        padding-bottom: 100px;
+        background: no-repeat center/100% url(../assets/portfolio_bg@2x.png);
+        background-size: cover;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -97,6 +104,13 @@ let state = reactive({
     .title-f {
         font-size: 64px;
         line-height: 75px;
+    }
+
+    .content-v {
+        width: 100%;
+        padding-bottom: 366px;
+        background: no-repeat center/100% url(../assets/portfolio_bg@2x.png);
+        background-size: cover;
     }
 }
 
@@ -113,12 +127,6 @@ let state = reactive({
     background-image: linear-gradient(179.9999385867923deg, #1B4DFF 0%, #01FFFF 100%);
     color: transparent;
     background-clip: text;
-}
-
-.content-v {
-    width: 100%;
-    background: no-repeat center/100% url(../assets/portfolio_bg@2x.png);
-    background-size: cover;
 }
 
 .row-view {
