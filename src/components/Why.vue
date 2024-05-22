@@ -63,7 +63,7 @@ let state = reactive({
                 <br>
                 <div class="checknode-view">
                     <div style="margin: 40px;">
-                        <div class="text-2">
+                        <div class="text-2 text-2-f">
                             Run a Checker Node!
                         </div>
                         <div class="text-3">
