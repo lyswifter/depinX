@@ -24,7 +24,7 @@ let state = reactive({
 <template>
     <div class="touch-view">
         <div class="mid-view">
-            <div class="title-v">Get in touch</div>
+            <div class="title-v title-v-f">Get in touch</div>
             <br>
             <div class="content-v border-1">
                 <div>
