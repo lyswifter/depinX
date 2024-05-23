@@ -24,6 +24,31 @@ let state = reactive({
         size: 'ssize-4',
     }]
 })
+
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const boxes = document.querySelectorAll('.s-card');
+
+    const checkBoxes = () => {
+        const triggerBottom = window.innerHeight * 0.8;
+
+        boxes.forEach(box => {
+            const boxTop = box.getBoundingClientRect().top;
+
+            if (boxTop < triggerBottom) {
+                box.classList.add('show');
+            } else {
+                box.classList.remove('show');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', checkBoxes);
+
+    // Initial check to see if any boxes are already in view
+    checkBoxes();
+});
+
 </script>
 
 <template>
@@ -55,12 +80,14 @@ let state = reactive({
 
                 <div class="industry-change-view">
                     <div class="industry-content-view">
-                        <div v-for="(item, i) in state.items" :key="i" class="s-card" :class="[item.img, item.size]">
-                            <div class="content-view">
-                                <div class="card-t1 card-t1-f">{{ item.title }}</div>
-                                <div class="card-t2 card-t2-f">{{ item.content }}</div>
+                        <!-- <Transition appear enter-active-class="animate__animated animate__fadeInRight" leave-active-class="animate__animated animate__bounceOutRight" v-for="(item, i) in state.items" :key="i"> -->
+                            <div v-for="(item, i) in state.items" :key="i" class="s-card" :class="[item.img, item.size]">
+                                <div class="content-view">
+                                    <div class="card-t1 card-t1-f">{{ item.title }}</div>
+                                    <div class="card-t2 card-t2-f">{{ item.content }}</div>
+                                </div>
                             </div>
-                        </div>
+                        <!-- </Transition> -->
                     </div>
                 </div>
             </div>
@@ -200,6 +227,15 @@ let state = reactive({
     border: 1px solid rgba(63, 102, 242, 0.39);
     border-radius: 10px;
     margin-top: 30px;
+
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+.s-card.show {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .one {

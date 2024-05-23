@@ -44,19 +44,43 @@ function leaveAction(index: number) {
     state.services[index].isHover = false
 }
 
-function rightClick() {
-    document.getElementsByClassName('service-list')[0].scrollBy({
-        left: 200,
-        behavior: 'smooth',
-    })
-}
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const boxes = document.querySelectorAll('.service-card');
 
-function leftClick() {
-    document.getElementsByClassName('service-list')[0].scrollBy({
-        left: -200,
-        behavior: 'smooth',
-    })
-}
+    const checkBoxes = () => {
+        const triggerBottom = window.innerHeight * 0.8;
+
+        boxes.forEach(box => {
+            const boxTop = box.getBoundingClientRect().top;
+
+            if (boxTop < triggerBottom) {
+                box.classList.add('show');
+            } else {
+                box.classList.remove('show');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', checkBoxes);
+
+    // Initial check to see if any boxes are already in view
+    checkBoxes();
+});
+
+// function rightClick() {
+//     document.getElementsByClassName('service-list')[0].scrollBy({
+//         left: 200,
+//         behavior: 'smooth',
+//     })
+// }
+
+// function leftClick() {
+//     document.getElementsByClassName('service-list')[0].scrollBy({
+//         left: -200,
+//         behavior: 'smooth',
+//     })
+// }
 </script>
 
 <template>
@@ -66,9 +90,9 @@ function leftClick() {
                 <div class="service-title service-title-f">What We Can Provide</div>
 
                 <div class="service-list">
-                    <div v-for="(item, i) in state.services" :key="i" class="service-card"
-                        :class="i == 0 ? 'm-l-none' : 'm-l-40'" @mouseover="hoverAction(i)" @mouseleave="leaveAction(i)"
-                        @click="clickAction(i)">
+                    <!-- :class="i == 0 ? 'm-l-none' : 'm-l-40'" -->
+                    <div v-for="(item, i) in state.services" :key="i" class="service-card service-card-size"
+                        @mouseover="hoverAction(i)" @mouseleave="leaveAction(i)" @click="clickAction(i)">
                         <div class="normal-card" v-if="!item.isHover">
                             <div class="normal-content">
                                 <img :src="item.img" width="100%" height="100%" alt="">
@@ -83,7 +107,7 @@ function leftClick() {
                     </div>
                 </div>
 
-                <div style="display: flex;margin-top: 60px;">
+                <!-- <div style="display: flex;margin-top: 60px;">
                     <div style="cursor: pointer;" @click="leftClick">
                         <img src="../assets/arrow_left_nor@2x.png" width="80" height="40" alt="">
                     </div>
@@ -91,7 +115,7 @@ function leftClick() {
                     <div style="margin-left: 20px;cursor: pointer;" @click="rightClick">
                         <img src="../assets//arrow_right_nor@2x.png" width="80" height="40" alt="">
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -151,7 +175,9 @@ function leftClick() {
     width: 100%;
     margin-top: 80px;
     display: flex;
-    overflow-x: scroll;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* overflow-x: scroll; */
 }
 
 .service-card {
@@ -160,6 +186,15 @@ function leftClick() {
     border-bottom: 4px solid;
     border-radius: 30px;
     clip-path: inset(0 round 10px);
+
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+.service-card.show {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .service-card:hover {
@@ -167,13 +202,19 @@ function leftClick() {
 }
 
 @media screen and (max-width: 767px) {
-    .normal-card {
-        width: 240px;
+    .service-card-size {
+        width: 100%;
         height: 440px;
+        margin-top: 20px;
+    }
+
+    .normal-card {
+        /* width: 240px; */
+        /* height: 440px; */
     }
 
     .normal-content {
-        width: 200px;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -183,8 +224,10 @@ function leftClick() {
     }
 
     .hover-card {
-        width: 240px;
-        height: 440px;
+        width: 100%;
+        height: 100%;
+        /* width: 240px; */
+        /* height: 440px; */
         background: linear-gradient(180deg, #1142F0 0%, #15E6E6 100%);
         border-radius: 30px 30px 30px 30px;
     }
@@ -201,14 +244,23 @@ function leftClick() {
 }
 
 @media screen and (min-width: 768px) {
+    .service-card-size {
+        width: 23%;
+        height: 480px;
+    }
+
     .normal-card {
-        width: 400px;
-        height: 580px;
+        width: 95%;
+        margin: 0 auto;
+        /* width: 340px; */
+        /* height: 480px; */
     }
 
     .normal-content {
-        width: 320px;
-        height: 382px;
+        width: 100%;
+        height: 100%;
+        /* width: 320px; */
+        /* height: 382px; */
         margin: 0 auto;
     }
 
@@ -218,20 +270,23 @@ function leftClick() {
     }
 
     .hover-card {
-        width: 400px;
-        height: 580px;
+        /* width: 400px; */
+        /* height: 580px; */
+        width: 95%;
+        margin: 0 auto;
+        height: 480px;
         background: linear-gradient(180deg, #1142F0 0%, #15E6E6 100%);
         border-radius: 30px 30px 30px 30px;
     }
 
     .hover-title-f {
-        font-size: 32px;
-        line-height: 38px;
+        font-size: 28px;
+        line-height: 28px;
     }
 
     .hover-content-f {
-        font-size: 18px;
-        line-height: 25px;
+        font-size: 16px;
+        line-height: 24px;
     }
 }
 
