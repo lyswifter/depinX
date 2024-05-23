@@ -85,6 +85,11 @@ let state = reactive({
         width: 90%;
         margin: 0 auto;
     }
+
+    .title-v-f {
+        font-size: 40px;
+        line-height: 47px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -93,12 +98,15 @@ let state = reactive({
         max-width: 1200px;
         margin: 0 auto;
     }
+
+    .title-v-f {
+        font-size: 64px;
+        line-height: 75px;
+    }
 }
 
 .title-v {
     font-weight: 600;
-    font-size: 64px;
-    line-height: 75px;
     text-align: left;
     font-style: normal;
     text-transform: none;
