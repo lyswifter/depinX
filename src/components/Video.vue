@@ -13,7 +13,8 @@ function scrollToNextView(target: string) {
 <template>
     <div>
         <div class="video-container video-height">
-            <video class="myvideo" muted autoplay="true" loop="true">
+            <video class="myvideo" muted autoplay="true" loop="true" style="object-fit: fill;"
+                x5-video-player-type="h5">
                 <source src="../assets/shadergradient.mp4" type="video/mp4">
             </video>
 
