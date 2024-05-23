@@ -317,7 +317,7 @@ let state = reactive({
 
 .qr-code-v {
     display: flex;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 @media screen and (max-width: 767px) {
