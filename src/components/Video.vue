@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const boxes = document.querySelectorAll('.text-2');
 
     const checkBoxes = () => {
-        const triggerBottom = window.innerHeight * 0.9;
+        const triggerBottom = window.innerHeight * 0.8;
 
         boxes.forEach(box => {
             const boxTop = box.getBoundingClientRect().top;
