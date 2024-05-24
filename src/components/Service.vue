@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const boxes = document.querySelectorAll('.service-card');
 
     const checkBoxes = () => {
-        const triggerBottom = window.innerHeight * 0.8;
+        const triggerBottom = window.innerHeight;
 
         boxes.forEach(box => {
             const boxTop = box.getBoundingClientRect().top;
@@ -90,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="service-title service-title-f">What We Can Provide</div>
 
                 <div class="service-list">
-                    <!-- :class="i == 0 ? 'm-l-none' : 'm-l-40'" -->
                     <div v-for="(item, i) in state.services" :key="i" class="service-card service-card-size service-card-trans"
                         @mouseover="hoverAction(i)" @mouseleave="leaveAction(i)" @click="clickAction(i)">
                         <div class="normal-card" v-if="!item.isHover">
@@ -173,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 .service-list {
     width: 100%;
-    margin-top: 80px;
+    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

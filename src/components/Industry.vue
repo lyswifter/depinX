@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 .industry-view {
     width: 100%;
     background: linear-gradient(180deg, #07195C 0%, #040C27 100%);
-    border-radius: 100px 100px 0px 0px;
+    border-radius: 50px 50px 0px 0px;
 }
 
 .id-title-view {
