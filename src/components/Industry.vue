@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     opacity: 0;
     transform: translateX(100%);
-    transition: transform 2s ease, opacity 2s ease;
+    transition: transform 1s ease, opacity 1s ease;
 }
 
 .s-card.show {

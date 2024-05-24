@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
 import ae from "../assets/portfolio_logo_aethir@2x.png";
+import aleo from "../assets/portfolio_logo_aleo@2x.png";
 import ar from "../assets/portfolio_logo_arweave@2x.png";
 import cel from "../assets/portfolio_logo_celestia@2x.png";
 import chia from "../assets/portfolio_logo_chia@2x.png";
@@ -8,8 +9,12 @@ import dlink from "../assets/portfolio_logo_deeplink@2x.png";
 import icp from "../assets/portfolio_logo_dfinity@2x.png";
 import fil from "../assets/portfolio_logo_filecoin@2x.png";
 import heli from "../assets/portfolio_logo_helium@2x.png";
+import iot from "../assets/portfolio_logo_iotex@2x.png";
+import nervos from "../assets/portfolio_logo_nervos@2x.png";
 import pol from "../assets/portfolio_logo_polkadot@2x.png";
+import polygon from "../assets/portfolio_logo_polygon@2x.png";
 import sol from "../assets/portfolio_logo_solana@2x.png";
+import uni from "../assets/portfolio_logo_uniswap@2x.png";
 
 let state = reactive({
     portfolios: [[{
@@ -42,8 +47,47 @@ let state = reactive({
     }, {
         name: "dlink",
         logo: dlink
+    }], [{
+        name: "uni",
+        logo: uni,
+    }, {
+        name: "aleo",
+        logo: aleo,
+    }, {
+        name: "nervos",
+        logo: nervos,
+    }, {
+        name: "iot",
+        logo: iot,
+    }, {
+        name: "polygon",
+        logo: polygon,
     }]]
 })
+
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const boxes = document.querySelectorAll('.logo-v');
+
+    const checkBoxes = () => {
+        const triggerBottom = window.innerHeight * 0.9;
+
+        boxes.forEach(box => {
+            const boxTop = box.getBoundingClientRect().top;
+
+            if (boxTop < triggerBottom) {
+                box.classList.add('show');
+            } else {
+                box.classList.remove('show');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', checkBoxes);
+
+    // Initial check to see if any boxes are already in view
+    checkBoxes();
+});
 </script>
 
 <template>
@@ -59,7 +103,7 @@ let state = reactive({
                 <div class="logo-view">
                     <div v-for="(itemOut, i) in state.portfolios" :key="i" class="row-view">
                         <div v-for="(itemIn, j) in itemOut" :key="j">
-                            <img :src="itemIn.logo" :alt="itemIn.name" class="logo-v">
+                            <img :src="itemIn.logo" :alt="itemIn.name" class="logo-v logo-v-trans">
                         </div>
                     </div>
                 </div>
@@ -87,6 +131,7 @@ let state = reactive({
 
     .content-v {
         width: 100%;
+        padding-top: 20px;
         padding-bottom: 100px;
         background: no-repeat center/100% url(../assets/portfolio_bg@2x.png);
         background-size: cover;
@@ -155,5 +200,16 @@ let state = reactive({
 
 .logo-v:hover {
     border-color: rgba(27, 77, 255, 1);
+}
+
+.logo-v-trans {
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 1s ease-in, opacity 1s ease-in;
+}
+
+.logo-v.show {
+    opacity: 1;
+    transform: scale(1);;
 }
 </style>

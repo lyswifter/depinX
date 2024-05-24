@@ -8,13 +8,37 @@ const emit = defineEmits({
 function scrollToNextView(target: string) {
     emit('scrollToNextView', target)
 }
+
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const boxes = document.querySelectorAll('.text-2');
+
+    const checkBoxes = () => {
+        const triggerBottom = window.innerHeight * 0.9;
+
+        boxes.forEach(box => {
+            const boxTop = box.getBoundingClientRect().top;
+
+            if (boxTop < triggerBottom) {
+                box.classList.add('show');
+            } else {
+                box.classList.remove('show');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', checkBoxes);
+
+    // Initial check to see if any boxes are already in view
+    checkBoxes();
+});
 </script>
 
 <template>
     <div>
         <div class="video-container video-height">
-            <video class="myvideo" muted autoplay="true" loop="true" style="object-fit: fill;"
-                x5-video-player-type="h5" poster="../assets//poster.jpg">
+            <video class="myvideo" muted autoplay="true" loop="true" style="object-fit: fill;" x5-video-player-type="h5"
+                poster="../assets//poster.jpg">
                 <source src="../assets/shadergradient.mp4" type="video/mp4">
             </video>
 
@@ -47,7 +71,7 @@ function scrollToNextView(target: string) {
                 <div class="line-1">
                 </div>
                 <br>
-                <div class="text-2 text-adopt">
+                <div class="text-2 text-2-trans text-adopt">
                     Our vision is to support early-stage DePIN projects through various means
                     including technical support (algorithm optimization, hardware and software
                     enhancements, technical maintenance, equipment supply), direct investment,
@@ -57,7 +81,7 @@ function scrollToNextView(target: string) {
                     an asset management scale of $20 million.
                 </div>
                 <br>
-                <div class="text-2 text-adopt">
+                <div class="text-2 text-2-trans text-adopt">
                     Our core members boast over five
                     years of IT and blockchain industry experience at leading institutions such as
                     Google, Baidu, Hashkey, and OKX, and are globally distributed in Hong Kong,
@@ -120,6 +144,17 @@ function scrollToNextView(target: string) {
     text-align: left;
     font-style: normal;
     text-transform: none;
+}
+
+.text-2-trans {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+    transition: transform 1s ease-in, opacity 1s ease-in;
+}
+
+.text-2.show {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 
 @media screen and (max-width: 767px) {

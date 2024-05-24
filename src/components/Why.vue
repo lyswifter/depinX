@@ -33,6 +33,30 @@ let state = reactive({
         dot: dot
     }]]
 })
+
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const boxes = document.querySelectorAll('.item-card');
+
+    const checkBoxes = () => {
+        const triggerBottom = window.innerHeight * 0.9;
+
+        boxes.forEach(box => {
+            const boxTop = box.getBoundingClientRect().top;
+
+            if (boxTop < triggerBottom) {
+                box.classList.add('show');
+            } else {
+                box.classList.remove('show');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', checkBoxes);
+
+    // Initial check to see if any boxes are already in view
+    checkBoxes();
+});
 </script>
 
 <template>
@@ -209,6 +233,15 @@ let state = reactive({
     margin-top: 30px;
     border-radius: 30px 30px 30px 30px;
     border: 1px solid rgba(63, 102, 242, 0.3);
+
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.item-card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .item-card:hover {
@@ -317,7 +350,7 @@ let state = reactive({
 
 .qr-code-v {
     display: flex;
-    margin-top: 80px;
+    margin-top:100px;
 }
 
 @media screen and (max-width: 767px) {
