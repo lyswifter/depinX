@@ -210,8 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     .normal-card {
-        /* width: 240px; */
-        /* height: 440px; */
     }
 
     .normal-content {
@@ -227,8 +225,6 @@ document.addEventListener('DOMContentLoaded', () => {
     .hover-card {
         width: 100%;
         height: 100%;
-        /* width: 240px; */
-        /* height: 440px; */
         background: linear-gradient(180deg, #1142F0 0%, #15E6E6 100%);
         border-radius: 30px 30px 30px 30px;
     }
@@ -311,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .hover-title {
-    width: 85%;
+    width: 80%;
     margin: 0 auto;
     font-weight: 600;
     color: #FFFFFF;
