@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <br>
                 <div class="text-3 text-3-f">
                     DePIN projects are numerous, with over 100 initiatives contributing to a market value
-                    exceeding $10 billion. These projects are expected to see significant growth, with
+                    exceeding $10 billion. These projects are expected to see significant growth, with the
                     potential to expand to a scale of $100 billion to $200 billion within 1-2 years.
                 </div>
                 <br>

@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const boxes = document.querySelectorAll('.service-card');
 
     const checkBoxes = () => {
-        const triggerBottom = window.innerHeight * 0.9;
+        const triggerBottom = window.innerHeight * 0.8;
 
         boxes.forEach(box => {
             const boxTop = box.getBoundingClientRect().top;
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     .service-card-trans {
         opacity: 0;
-        transform: translateY(100%);
+        transform: translateY(85%);
         transition: transform 1s ease, opacity 1s ease;
     }
 
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     .service-card-trans {
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateX(85%);
         transition: transform 1s ease, opacity 1s ease;
     }
 

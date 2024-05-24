@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const boxes = document.querySelectorAll('.text-2');
 
     const checkBoxes = () => {
-        const triggerBottom = window.innerHeight * 0.8;
+        const triggerBottom = window.innerHeight;
 
         boxes.forEach(box => {
             const boxTop = box.getBoundingClientRect().top;
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     Our vision is to support early-stage DePIN projects through various means
                     including technical support (algorithm optimization, hardware and software
                     enhancements, technical maintenance, equipment supply), direct investment,
-                    media empowerment, ecosystem incubation, scientist activities, and organizing Hackathon
+                    media empowerment, ecosystem incubation, scientific activities, and organizing hackathon
                     events.
                     We are backed by top Filecoin mining service providers with
                     an asset management scale of $20 million.
@@ -148,13 +148,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 .text-2-trans {
     opacity: 0;
-    transform: translate3d(0, -100%, 0);
-    transition: transform 1s ease-in, opacity 1s ease-in;
+    transform: scale(0);
+    transition:transform 1s ease, opacity 1.5s ease-in;
 }
 
 .text-2.show {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: scale(1);
 }
 
 @media screen and (max-width: 767px) {
