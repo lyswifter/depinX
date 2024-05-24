@@ -35,8 +35,9 @@ let state = reactive({
                                 <div class="text-1">For Investment Cooperation: </div>
                                 <a href="mailto:sallygu@depinxcapital.com">
                                     <div style="display: flex;">
-                                        <div class="text-2">sallygu@depinxcapital.com</div>
-                                        <img src="../assets/arrow_right_up_nor@2x.png" width="16" height="16" alt="">
+                                        <div class="text-2">sallygu@depinx.com</div>
+                                        <img src="../assets/arrow_right_up_nor@2x.png" style="margin-top: 4px;"
+                                            width="16" height="16" alt="">
                                     </div>
                                 </a>
                             </div>
@@ -44,9 +45,10 @@ let state = reactive({
                             <div class="m-l-40 m-t-40 m-b-40">
                                 <div class="text-1">For Mining Cooperation: </div>
                                 <a href="mailto:myron_zhu@depinxcapital.com">
-                                    <div style="display: flex;">
-                                        <div class="text-2">myron_zhu@depinxcapital.com</div>
-                                        <img src="../assets/arrow_right_up_nor@2x.png" width="16" height="16" alt="">
+                                    <div style="display: flex;justify-self:end;">
+                                        <div class="text-2">myron_zhu@depinx.com</div>
+                                        <img src="../assets/arrow_right_up_nor@2x.png" style="margin-top: 4px;"
+                                            width="16" height="16" alt="">
                                     </div>
                                 </a>
                             </div>
@@ -59,7 +61,8 @@ let state = reactive({
                                     <a :href="item.href" target="_blank">
                                         <div style="display: flex;justify-content: start;">
                                             <div class="text-2">{{ item.title }}</div>
-                                            <img :src="item.arrow" width="16" height="16" alt="">
+                                            <img :src="item.arrow" style="margin-top: 4px;" width="16" height="16"
+                                                alt="">
                                         </div>
                                     </a>
                                 </div>
