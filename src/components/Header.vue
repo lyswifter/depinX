@@ -7,8 +7,8 @@ let state = reactive({
     isCollpase: true,
     menuItems: [{
         index: 0,
-        title: "About",
-        action: "AboutAnchor",
+        title: "Our Vision",
+        action: "VisionAnchor",
     }, {
         index: 1,
         title: "Industry Background",
