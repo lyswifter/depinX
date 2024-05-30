@@ -15,6 +15,8 @@ declare module 'vue' {
     Home: typeof import('./src/components/Home.vue')['default']
     Industry: typeof import('./src/components/Industry.vue')['default']
     Portfolio: typeof import('./src/components/Portfolio.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     Service: typeof import('./src/components/Service.vue')['default']
     Touch: typeof import('./src/components/Touch.vue')['default']
     Video: typeof import('./src/components/Video.vue')['default']
