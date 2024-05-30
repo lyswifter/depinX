@@ -8,7 +8,7 @@ import dot from '../assets/icon_acnode_tag@2x.png';
 
 let state = reactive({
     features: [[{
-        title: "The best revenue spliton the entire network",
+        title: "The best revenue split on the entire network",
         content: "95 : 5, You take 95%",
         img: first,
         cls: "one",
@@ -20,14 +20,14 @@ let state = reactive({
         cls: "two",
         dot: dot
     }], [{
-        title: "Clear and transparentproft sharing",
+        title: "Clear and transparent profit sharing",
         content: "Clear and transparent output/revenue. Investors can see it !",
         img: third,
         cls: "three",
         dot: dot
     }, {
-        title: "The best revenue spliton the entire network",
-        content: "Southeast Asia Tier 3 data center + Our 10 years of blockchain technology maintenancev",
+        title: "Reliable data centers +Stable maintenancev operations",
+        content: "Southeast Asia Tier 3 data center + Our 10 years of blockchain technology maintenance",
         img: fourth,
         cls: "four",
         dot: dot
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const boxes = document.querySelectorAll('.item-card');
 
     const checkBoxes = () => {
-        const triggerBottom = window.innerHeight * 0.8;
+        const triggerBottom = window.innerHeight * 1.2;
 
         boxes.forEach(box => {
             const boxTop = box.getBoundingClientRect().top;

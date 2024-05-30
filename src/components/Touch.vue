@@ -46,7 +46,7 @@ let state = reactive({
                                 <div class="text-1">For Mining Cooperation: </div>
                                 <a href="mailto:myron_zhu@depinxcapital.com">
                                     <div style="display: flex;justify-self:end;">
-                                        <div class="text-2">myron_zhu@depinxcapital.com</div>
+                                        <div class="text-2">myron_zhu@depinx.com</div>
                                         <img src="../assets/arrow_right_up_nor@2x.png" style="margin-top: 4px;"
                                             width="16" height="16" alt="">
                                     </div>
